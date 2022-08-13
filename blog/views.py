@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from blog.forms import CommentForm
 from django.utils import timezone
 from blog.models import Post
+from django.urls import reverse
 import logging
 
 logger = logging.getLogger(__name__)
@@ -37,4 +38,4 @@ def post_detail(request, slug):
     return render(request, "blog/post-detail.html", {"post": post, "comment_form": comment_form})
 
 def post_table(request):
-    return render(request, "blog/post-table.html")
+    return render(request, "blog/post-table.html", {"post_list_url": reverse("post-list")})
