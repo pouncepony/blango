@@ -69,6 +69,7 @@ class Dev(Configuration):
       'rest_framework.authtoken',
       'drf_yasg',
       'django_filters',
+      'versatileimagefield',
   ]
 
   REST_FRAMEWORK = {
@@ -249,7 +250,10 @@ class Dev(Configuration):
   SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
-}
+  }
+
+  MEDIA_ROOT = BASE_DIR / "media"
+  MEDIA_URL = "/media/"
 
 
 
